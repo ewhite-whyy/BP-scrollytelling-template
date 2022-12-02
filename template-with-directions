@@ -1,0 +1,390 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<!-- NOTE: only edit portions of this code as directed in these notes. There are directions on how to update the Flourish link to the correct visualization, and how to change the text that shows on the side as a reader scrolls. -->
+<!-- You can easily find what you need to change by searching for "update" in this file! -->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="how-to-make-a-story">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Overpass" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">  
+
+  <style>
+    body {
+      font-family: 'Overpass',"Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      color: #000000;
+    }
+
+    .font-secondary {
+      font-family: 'Overpass', sans-serif !important;
+    }
+
+    .text-h1 {
+      font-size: 36px;
+      line-height: 52px;
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 32px;
+        line-height: 48px;
+      }
+    }
+
+    .text-h2 {
+      font-size: 32px;
+      line-height: 36px;
+      font-weight: 500;
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+
+    .text-body-1 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 32px;
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+
+    .text-body-2 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+
+    .blockquote {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 36px;
+      text-transform: uppercase;
+      text-align: center;
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 28px;
+      }  
+    }
+
+    .text-caption {
+      font-size: 14px;
+      line-height: 22px;
+
+      @media (min-width: @screen-sm-min) {
+        font-size: 12px;
+        line-height: 18px; 
+      }
+    }
+
+    a {
+      color: #104E8B !important;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+
+    /* Small devices (tablets, 768px and up) */
+    /* @media (min-width: @screen-sm-min) { ... } */
+
+    /* Medium devices (desktops, 992px and up) */
+    /* @media (min-width: @screen-md-min) { ... } */
+
+    /* Large devices (large desktops, 1200px and up) */
+    /* @media (min-width: @screen-lg-min) { ... } */
+
+    
+    @media (max-width: screen-xs-max)
+
+     .mobileHide { 
+        display: none;
+      } 
+
+      #scrolly__section {
+        position: relative;
+        padding: 0;
+      }
+
+      .scrolly__content {
+        position: relative;
+        padding: 0;
+        width: 100%;
+      }
+
+      .scrolly__chart {
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100%;
+        height: 50vh;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 0;
+      }
+
+      .scrolly__chart iframe {
+        width: 100%;
+        height: 100%;      
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        border: none;
+        display: flex;
+        height: 748px;
+        justify-content: center;
+        align-items: start;    
+      }
+
+      .step:last-child {
+        margin-bottom: 0;
+      }
+
+      .text-block.is-active {
+        background-color: transparent;
+        color: #000000;
+      }
+
+      .text-block {
+        background-color: transparent;
+        color: #000000;
+        margin-bottom: auto;
+      }
+
+      .step p {
+        text-align: center;
+      }
+
+      iframe {
+        border: none;
+        height: 50vw;
+      }
+      
+    }
+    
+
+    @media (min-width: screen-xs-min)
+      
+      .mobileHide { 
+        display: inline;
+      } 
+
+      #scrolly__section {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* background-color: #f3f3f3; */
+        padding: 1rem;
+      }
+
+      #scrolly__section > * {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+      }
+
+      .scrolly__content {
+        position: relative;
+        padding: 0 1rem;
+        width: 100%;
+      }
+
+      .scrolly__chart {
+        position: -webkit-sticky;
+        position: sticky;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        z-index: 0;
+      }
+
+      .scrolly__chart iframe {
+        width: 100%;
+        height: 100%;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: start;    
+      }
+
+      .step:last-child {
+        margin-bottom: 0;
+      }
+
+      .text-block.is-active {
+        background-color: transparent;
+        color: #000000;
+      }
+
+      .text-block {
+        background-color: transparent;
+        color: #000000;
+        margin-bottom: 1rem;
+      }
+
+      .step p {
+        text-align: center;
+        padding: 1rem;
+      }
+
+      iframe {
+        border: unset;
+      }
+    }
+
+  </style>
+</head>
+
+  <body>
+    <div class="wrapper">
+      
+      <div class="container-fluid" id="root">
+        <div class="row justify-content-center" id="scrolly__section">
+          <div class="col-xs-4 scrolly__content">
+            <!-- NOTE: you need to make sure that the data steps for each text block match what you want to show in the visualization. You can add more text boxes by duplicating from <div class="step" to the second </div>  Then, make sure the data-step is set to the number of the correct slide in the Flourish story.-->
+            <div class="step" data-step="1">
+              <div class="text-block pa-2">
+                <p class="text-body-1">Lorem 1</p>
+                <p class="text-body-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium debitis modi labore unde commodi, dolorem ut enim, necessitatibus odit facere et pariatur minus! Aliquam rem earum tempore accusamus corporis similique.</p>
+              </div>
+            </div>
+            <div class="step" data-step="2">
+              <div class="text-block pa-2">
+                <p class="text-body-1">Lorem 2</p>
+                <p class="text-body-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium debitis modi labore unde commodi, dolorem ut enim, necessitatibus odit facere et pariatur minus! Aliquam rem earum tempore accusamus corporis similique.</p>
+              </div>            
+            </div>
+            <div class="step" data-step="3">
+              <div class="text-block pa-2">
+                <p class="text-body-1">Lorem 3</p>
+                <p class="text-body-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium debitis modi labore unde commodi, dolorem ut enim, necessitatibus odit facere et pariatur minus! Aliquam rem earum tempore accusamus corporis similique.</p>
+              </div>            
+            </div>
+            <div class="step" data-step="4">
+              <div class="text-block pa-2">
+                <p class="text-body-1">Lorem 4</p>
+                <p class="text-body-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium debitis modi labore unde commodi, dolorem ut enim, necessitatibus odit facere et pariatur minus! Aliquam rem earum tempore accusamus corporis similique.</p>
+              </div>            
+            </div>
+            <div class="step" data-step="5">
+              <div class="text-block pa-2">
+                <p class="text-body-1">Lorem 5</p>
+                <p class="text-body-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium debitis modi labore unde commodi, dolorem ut enim, necessitatibus odit facere et pariatur minus! Aliquam rem earum tempore accusamus corporis similique.</p>
+              </div>            
+            </div>
+          </div>
+          <!-- NOTE: Update the link below to the correct Flourish story. Do not use a single visualization! -->
+          <div class="mobileHide">
+            <div class="col-xs-8 scrolly__chart">
+              <iframe src='https://flo.uri.sh/story/1711585/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/1711585/?utm_source=embed&utm_campaign=story/1711585' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+    <script src="https://unpkg.com/intersection-observer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ewhite-whyy/scrollarama_edit@main/scrollama%20(1).js"></script>    
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    
+
+    <!-- This code from here on is derived from the side-by-side code example from the scrollama library which can be found here: https://github.com/russellgoldenberg/scrollama  -->
+    <!-- I tweaked the function for handleStepEnter to accomodate the Flourish story! -->
+
+    <script>
+      var scrolly = d3.select("#scrolly__section");
+      var chart = scrolly.select(".scrolly__chart");
+      var content = scrolly.select(".scrolly__content");
+      var step = content.selectAll(".step");
+    
+      // initialize the scrollama
+      var scroller = scrollama();
+    
+      // generic window resize listener event
+      function handleResize() {
+        // 1. update height of step elements
+        var stepH = Math.floor(window.innerHeight * 1);
+        step.style("height", stepH + "px");
+    
+        var figureHeight = window.innerHeight * 0.75;
+        var figureMarginTop = (window.innerHeight - figureHeight) / 2;
+    
+        chart
+          .style("height", figureHeight + "px")
+          .style("top", figureMarginTop + "px");
+    
+        // 3. tell scrollama to update new element dimensions
+        scroller.resize();
+      }
+    
+      // scrollama event handlers
+      function handleStepEnter(response) {
+        const textblock = step.select(".text-block");
+
+        // add color to current step only
+        textblock.classed("is-active", function(d, i) {
+          return i === response.index;
+        });
+    
+        // update graphic based on step
+        // NOTE: you also need to update this Flourish story link!
+        const linkHead = 'https://flo.uri.sh/story/1711585/embed#slide-'
+        const slide = response.index
+
+        d3.select('.scrolly__chart iframe')
+          .attr('src', linkHead + slide);
+      }
+    
+      function setupStickyfill() {
+        d3.selectAll(".sticky").each(function() {
+          Stickyfill.add(this);
+        });
+      }
+    
+      function init() {
+        setupStickyfill();
+        handleResize();
+        scroller
+          .setup({
+            step: "#scrolly__section .scrolly__content .step",
+            offset: 0.7,
+            debug: true
+          })
+          .onStepEnter(handleStepEnter);
+    
+        // setup resize event
+        window.addEventListener("resize", handleResize);
+      }
+    
+      init();
+    </script>    
+  </body>
+</html>
+
